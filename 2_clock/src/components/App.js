@@ -18,7 +18,7 @@ class App extends Component {
     const { latitude } = this.state;
     const month = new Date().getMonth();
     if (
-      (month < 3 && latitude < 0) ||
+      (month === 11) ||
       (5 < month && month < 9 && latitude > 0)
     ) {
       return "summer.png";
