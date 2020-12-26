@@ -1,4 +1,4 @@
-# JavaScript Mini Projects
+# React Mini Projects
 
 ## ℹ About
 
@@ -20,6 +20,6 @@ Clock that shows ticking seconds hand and an image for the season based on the m
 ### 3. Counter
 
 Practising state, useEffect with setInterval and setTimeout.
-Counter that autoincrements every second and changes color. Increment and Decrement buttons.
+Counter that auto increments every second and changes color. Increment and Decrement buttons.
 
 ![Counter](./docs/counter.gif)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-const randomcolor = require('randomcolor');
+import randomcolor from 'randomcolor'
 
 function App() {
   const [count, setCount] = useState(0)
