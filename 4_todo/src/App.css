@@ -21,6 +21,10 @@ h2 {
   font-weight: normal;
 }
 
+button {
+  margin-bottom: 10px;
+}
+
 /* Simulates pile of papers */
 
 .todo-list,
