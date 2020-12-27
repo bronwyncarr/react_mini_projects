@@ -22,7 +22,7 @@ class App extends React.Component {
     this.setState((prevState) => {
       const updatedTodos = prevState.todoData.map((todo) => {
         if (todo.id === id) {
-          return{ ...todo, completed: !todo.completed}
+          return { ...todo, completed: !todo.completed };
         }
         return todo;
       });
@@ -34,10 +34,11 @@ class App extends React.Component {
 
   handleClearClick() {
     this.setState((prevState) => {
-      const clearedTodos = prevState.todoData.map(todo => {
-        return {...todo, completed: false}})
-      return {todoData: clearedTodos}
-    })
+      const clearedTodos = prevState.todoData.map((todo) => {
+        return { ...todo, completed: false };
+      });
+      return { todoData: clearedTodos };
+    });
   }
 
   render() {
