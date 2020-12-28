@@ -1,22 +1,24 @@
 import "./App.css";
 import React from "react";
 
+// Simulates data stored in a database
 const users = [
   {
     email: "a@test.com",
-    password: "asdf",
+    password: "1234",
   },
   {
-    email: "",
-    password: "",
+    email: "b@test.com",
+    password: "1234",
   },
   {
-    email: "",
-    password: "",
+    email: "c@test.com",
+    password: "1234",
   },
 ];
 
 class App extends React.Component {
+  // initialises state values
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +29,10 @@ class App extends React.Component {
     };
   }
 
+  // clears previous messages by first setting msg state to ''.
+  // Checks the state value of password and email set by the controlled component/form.
+  // If the entered value matches one in the 'database' value of msg state is set.
+  // When page rerenders, this is displayed to user.
   onFormSubmit = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
@@ -43,17 +49,18 @@ class App extends React.Component {
         });
       } else {
         this.setState({
-          errorMessage: "Sorry wrong credentials. Please try again",
+          errorMessage: "Password did not match. Please try again",
         });
       }
     } else {
       this.setState({
-        errorMessage: "Sorry wrong credentials. Please try again",
+        errorMessage: "Sorry, wrong credentials. Please try again",
       });
     }
   };
 
   onInputChange = (e) => {
+    // Destructing used to match id of input with state key.
     this.setState({
       [e.target.id]: e.target.value,
     });
@@ -61,13 +68,12 @@ class App extends React.Component {
 
   render() {
     return (
+      // Diplays form to user.
+      // OnChange sets the input to state to be compared by the onFormSubmit function when submitted.
+
       <div className="container">
-        {this.state.errorMessage && (
-          <p>Sorry, wrong Credentials entered. Please try again</p>
-        )}
-        {this.state.successMessage && (
-          <p>Sucessfully verified. Welcome back!</p>
-        )}
+        {this.state.errorMessage}
+        {this.state.successMessage}
         <h1>Log in</h1>
         <form className="login-form" onSubmit={this.onFormSubmit}>
           <label htmlFor="email">Email:</label>
@@ -83,7 +89,7 @@ class App extends React.Component {
             type="password"
             name="password"
             id="password"
-            value={this.state.email}
+            value={this.state.password}
             onChange={this.onInputChange}
           />
           <input type="submit" value="submit" id="submit" />
