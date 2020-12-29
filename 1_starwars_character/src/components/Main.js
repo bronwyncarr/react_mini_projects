@@ -5,16 +5,14 @@ import "../styles/index.css";
 // Accepts each object in the array that came from SWAPI as props.
 // Displays information for the character.
 function Main(props) {
+    // Looks through the characterImages array for a name that matches the one passed in as props.
+    // If found, that picture is assigned to the pic variable which, if exists is displayed.
     let pic
     let character = characterImages.find((person) => person.name === props.character.name)
-    if (character) {
-        pic = character.pic
-    }
+    character && (pic = character.pic)
 
-    
     return(
         <main>
-           
             <h1>Star Wars Characters</h1>
             <div className="container" >
                 {pic ? <img src={pic} height="200" alt=""/> : <p>No Picture available</p>}
