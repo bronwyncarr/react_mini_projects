@@ -13,11 +13,11 @@ function Todo(props) {
       <input
         type="checkbox"
         checked={props.todo.completed}
-        onChange={() => { props.handleChange(props.todo.id); }}
+        onChange={() => { props.handleChange(props.todo.item); }}
       />
       <p
         className="item"
-        onClick={() => props.handleChange(props.todo.id)}
+        onClick={() => props.handleChange(props.todo.item)}
         style={styles}
       >
         {props.todo.item}

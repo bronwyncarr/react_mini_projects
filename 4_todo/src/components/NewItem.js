@@ -15,16 +15,14 @@ class NewItem extends React.Component {
     this.setState({
       [name]: value,
     });
-  }
-
-  handleSubmit = () => {
-    
-  }
+  };
 
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          onSubmit={(e) => this.props.handleSubmit(e, this.state.userInput)}
+        >
           <input
             type="text"
             placeholder="Add a new Task"
@@ -32,7 +30,7 @@ class NewItem extends React.Component {
             name="userInput"
             value={this.state.userInput}
           />
-          <buton>Add</buton>
+          <button>Add</button>
         </form>
       </>
     );
