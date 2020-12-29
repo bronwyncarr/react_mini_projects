@@ -11,15 +11,13 @@ class App extends React.Component {
     this.state = {
       todoData: TodoData,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClearClick = this.handleClearClick.bind(this);
   }
 
   // Passed id of item to have checkbox flipped.
   // Maps through entire todoData array and looks for item with id matching to the one passes in.
   // Will then flip the value true/false of that completed key: value.
   // Saves to a new array called updatedTodos and sets that to state.
-  handleChange(id) {
+  handleChange = (id) => {
     this.setState((prevState) => {
       const updatedTodos = prevState.todoData.map((todo) => {
         if (todo.id === id) {
@@ -33,7 +31,7 @@ class App extends React.Component {
     });
   }
 
-  handleClearClick() {
+  handleClearClick = () => {
     this.setState((prevState) => {
       const clearedTodos = prevState.todoData.map((todo) => {
         return { ...todo, completed: false };
