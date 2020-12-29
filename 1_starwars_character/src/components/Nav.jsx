@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Basic nav component purely to practise importing/exporting components.
+// Has no functional purpose.
 const Nav =() => {
     return(
         <nav>

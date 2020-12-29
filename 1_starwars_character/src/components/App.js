@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Main from "./Main";
 
 class App extends Component {
+  // Constructor initialises state for characters to empty array (will come from fetch).
   constructor() {
     super();
     this.state = {
@@ -10,8 +11,8 @@ class App extends Component {
     };
   }
 
+  // Fetch data from swapi, convert to json then save the results array to state.
   componentDidMount() {
-    console.log("mounted");
     fetch("https://swapi.dev/api/people")
       .then((response) => response.json())
       .then((data) =>
@@ -23,9 +24,9 @@ class App extends Component {
 
   render() {
     return (
+      // Map over array from swapi and pass each object in the array into Main component
       <div>
         <Nav />
-        {console.log(this.state.characters)}
         {this.state.characters.map((character, index) => {
           return <Main key={index} character={character} />;
         })}

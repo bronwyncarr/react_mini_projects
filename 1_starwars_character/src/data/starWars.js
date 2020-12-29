@@ -1,6 +1,8 @@
 export const characterImages = [
   {
-    'Luke Skywalker': 'https://upload.wikimedia.org/wikipedia/en/9/9b/Luke_Skywalker.png'
+    "id": 1,
+    "name": 'Luke Skywalker',
+    "pic": 'https://upload.wikimedia.org/wikipedia/en/9/9b/Luke_Skywalker.png'
   },
   {
     "id": 2,

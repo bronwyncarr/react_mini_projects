@@ -1,13 +1,23 @@
 import React from 'react'
-// import characterImages from '../data/starWars'
+import {characterImages} from '../data/starWars'
 import "../styles/index.css";
 
+// Accepts each object in the array that came from SWAPI as props.
+// Displays information for the character.
 function Main(props) {
+    let pic
+    let character = characterImages.find((person) => person.name === props.character.name)
+    if (character) {
+        pic = character.pic
+    }
+
+    
     return(
         <main>
+           
             <h1>Star Wars Characters</h1>
             <div className="container" >
-                {props.character.pic ? <img src={props.character.pic} height="200" alt=""/> : <p>No Picture available</p>}
+                {pic ? <img src={pic} height="200" alt=""/> : <p>No Picture available</p>}
                     <h2>{props.character.name}</h2>
                     <p>Height: {props.character.height} cm</p>
                     <p>Mass: {props.character.mass} kg</p>
