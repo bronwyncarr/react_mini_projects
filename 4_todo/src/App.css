@@ -17,9 +17,14 @@
   margin: 5px;
 }
 
+h1 {
+  margin: 10px;
+}
+
 h2 {
   color: dimgray;
   font-weight: normal;
+  margin: 10px;
 }
 
 button {
