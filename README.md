@@ -23,3 +23,8 @@ Practising state, useEffect with setInterval and setTimeout.
 Counter that auto increments every second and changes color. Increment and Decrement buttons.
 
 ![Counter](./docs/counter.gif)
+
+## 📋 References
+Some ideas are inspired from:
+- AIT term 3 course material
+- [Learn React for Free by Bob Ziroll](https://scrimba.com/learn/learnreact)
